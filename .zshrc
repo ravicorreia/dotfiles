@@ -14,6 +14,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':fzf-tab:*' fzf-flags --style full --height 40%
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -2 --color=always $realpath'
+# bun completions
+[ -s "$HOME/.config/bun/_bun" ] && source "$HOME/.config/bun/_bun"
 
 # Plugins
 zinit ice depth=1
@@ -113,13 +115,3 @@ alias minikctl="minikube kubectl"
 # Alias recomendado no .zshrc
 alias brew-up='brew update && brew upgrade'
 
-# bun completions
-[ -s "/Users/solomon/.bun/_bun" ] && source "/Users/solomon/.bun/_bun"
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/solomon/.config/sdkman"
-[[ -s "/Users/solomon/.config/sdkman/bin/sdkman-init.sh" ]] && source "/Users/solomon/.config/sdkman/bin/sdkman-init.sh"
